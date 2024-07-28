@@ -2,6 +2,10 @@
 
 React-Simple-Slide-Captcha 是一个用于用户滑块行为验证的 React 组件。
 
+## 演示
+
+![image](demo.gif)
+
 ## 安装
 
 ```bash

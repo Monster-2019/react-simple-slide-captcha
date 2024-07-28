@@ -6,7 +6,7 @@
   "author": "MonsterCone",
   "license": "MIT",
   "type": "module",
-  "module": "./dist/index.es.js",
+  "main": "./dist/index.es.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
@@ -18,11 +18,16 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "LICENSE"
   ],
   "publishConfig": {
     "access": "public"
   },
+  "keywords": [
+    "vite",
+    "react"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
