@@ -135,20 +135,19 @@ const SlideCaptcha = forwardRef<SlideCaptchaHandle, SlideCaptchaProps>((props, r
     }, [isVerified])
 
     return (
-        <div>
+        <div
+            className={`slide_container relative flex justify-center items-center bg-gray-200`}
+            style={{
+                width: width !== 0 ? width + 'px' : '100%',
+                height: height !== 0 ? height + 'px' : '100%'
+            }}
+            ref={containerRef}
+        >
+            <p className="select-none text-sm">
+                {isFail ? failLabel : isVerified ? successLabel : defaultLabel}
+            </p>
             <div
-                className={`slide_container relative flex justify-center items-center bg-gray-200`}
-                style={{
-                    width: width !== 0 ? width + 'px' : '100%',
-                    height: height !== 0 ? height + 'px' : '36px'
-                }}
-                ref={containerRef}
-            >
-                <p className="select-none text-sm">
-                    {isFail ? failLabel : isVerified ? successLabel : defaultLabel}
-                </p>
-                <div
-                    className={`slide_control h-full absolute top-0 left-0 border border-solid transition-all duration-300
+                className={`slide_control h-full absolute top-0 left-0 border border-solid transition-all duration-300
                         ${!isDragging && !isVerified && !isFail ? 'border-white' : ''}
                         ${
                             isDragging
@@ -158,27 +157,26 @@ const SlideCaptcha = forwardRef<SlideCaptchaHandle, SlideCaptchaProps>((props, r
                         ${isVerified ? 'border-green-400 bg-green-400 bg-opacity-10' : ''}
                         ${isFail ? 'border-red-400 bg-red-400 bg-opacity-10 ' : ''}
                     `}
-                    style={{ width: left + sliderWidth + 'px' }}
-                >
-                    <div
-                        className={`slide_thumb h-full flex select-none justify-center cursor-pointer hover:bg-blue-400 items-center absolute top-0 left-0 z-10 transition-all duration-300
+                style={{ width: left + sliderWidth + 'px' }}
+            >
+                <div
+                    className={`slide_thumb h-full flex select-none justify-center cursor-pointer hover:bg-blue-400 items-center absolute top-0 left-0 z-10 transition-all duration-300
                             ${!isDragging && !isVerified && !isFail ? 'bg-white' : ''}
                             ${isDragging ? 'bg-blue-400 transition-none' : ''}
                             ${isVerified ? 'bg-green-400' : ''}
                             ${isFail ? '!bg-red-400' : ''}
                         `}
-                        onMouseDown={handleMouseDown}
-                        ref={sliderRef}
-                        style={{ left: left + 'px', width: sliderWidth + 'px' }}
-                    >
-                        {isFail ? (
-                            <IconError />
-                        ) : isVerified ? (
-                            <IconCheckmarkOutline />
-                        ) : (
-                            <IconRightArrow />
-                        )}
-                    </div>
+                    onMouseDown={handleMouseDown}
+                    ref={sliderRef}
+                    style={{ left: left + 'px', width: sliderWidth + 'px' }}
+                >
+                    {isFail ? (
+                        <IconError />
+                    ) : isVerified ? (
+                        <IconCheckmarkOutline />
+                    ) : (
+                        <IconRightArrow />
+                    )}
                 </div>
             </div>
         </div>

@@ -20,7 +20,7 @@ export default defineConfig({
     build: {
         lib: {
             entry: resolve(__dirname, './lib/index.ts'),
-            name: 'slide-captcha-react',
+            name: 'react-simple-slide-captcha',
             formats: ['es'],
             fileName: format => `index.${format}.js`
         },
