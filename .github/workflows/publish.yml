@@ -10,14 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
         with:
-          node-version: "18" # 选择你需要的 Node.js 版本
-          registry-url: "https://registry.npmjs.org"
+          node-version: "20" # 选择你需要的 Node.js 版本
 
       - name: Install dependencies
         run: npm install
@@ -26,6 +22,6 @@ jobs:
         run: npm run build # 确保你的 package.json 中有合适的 build 脚本
 
       - name: Publish to npm
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        uses: JS-DevTools/npm-publish@v3
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
