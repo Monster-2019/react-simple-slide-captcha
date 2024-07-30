@@ -92,6 +92,7 @@ const SlideCaptcha = forwardRef<SlideCaptchaHandle, SlideCaptchaProps>((props, r
     const reset = () => {
         setLeft(0)
         setIsVerified(false)
+        onChange(false)
     }
 
     useEffect(() => {
