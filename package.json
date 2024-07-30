@@ -60,5 +60,8 @@
     "vite": "^5.3.4",
     "vite-plugin-dts": "^4.0.0-beta.1",
     "vite-plugin-svgr": "^4.2.0"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.19.1"
   }
 }
