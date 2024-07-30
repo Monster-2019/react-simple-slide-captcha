@@ -2,7 +2,7 @@
   "name": "react-simple-slide-captcha",
   "description": "React Slide Captcha Components",
   "private": false,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "MonsterCone",
   "license": "MIT",
   "type": "module",
@@ -21,6 +21,10 @@
     "dist",
     "LICENSE"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Monster-2019/react-simple-slide-captcha.git"
+  },
   "publishConfig": {
     "access": "public"
   },
