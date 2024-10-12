@@ -95,7 +95,7 @@ const SlideCaptcha = forwardRef<SlideCaptchaHandle, SlideCaptchaProps>((props, r
 		onChange(false)
 	}
 
-	const initSlide = () => {
+	const initSlide = (): Element | undefined => {
 		const element = containerRef.current
 		if (!element) return
 
@@ -120,6 +120,8 @@ const SlideCaptcha = forwardRef<SlideCaptchaHandle, SlideCaptchaProps>((props, r
 
 	useEffect(() => {
 		const element = initSlide()
+		if (!element) return
+
 		const resizeObserver = new ResizeObserver(entries => {
 			for (let entry of entries) {
 				setContainerStyle(prev => ({ ...prev, width: entry.contentRect.width }))

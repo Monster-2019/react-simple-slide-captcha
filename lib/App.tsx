@@ -1,8 +1,8 @@
 import { useRef } from 'react'
-import SlideCaptcha from './components/SlideCaptcha'
+import SlideCaptcha, { SlideCaptchaHandle } from './index'
 
 function App() {
-	const slideCaptchaRef = useRef<SlideCaptchaHandle>()
+	const slideCaptchaRef = useRef<SlideCaptchaHandle | null>(null)
 	const handleChange = (val: boolean) => {
 		console.log(val)
 	}
