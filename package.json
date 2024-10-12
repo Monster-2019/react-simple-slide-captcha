@@ -2,7 +2,7 @@
   "name": "react-simple-slide-captcha",
   "description": "React Slide Captcha Components",
   "private": false,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "MonsterCone",
   "license": "MIT",
   "type": "module",
